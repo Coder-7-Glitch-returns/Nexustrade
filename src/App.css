@@ -10,11 +10,13 @@ textarea {
 
 .pyramid-loader {
   position: relative;
-  width: 300px;
-  height: 150px;
-  display: block;
+  width: 20vw;
+  max-width: 300px;
+  min-width: 150px;
+  aspect-ratio: 1 / 1;
   transform-style: preserve-3d;
   transform: rotateX(-20deg);
+  margin: auto;
 }
 
 .wrapper {
@@ -47,29 +49,44 @@ textarea {
 }
 
 .pyramid-loader .wrapper .side1 {
-  transform: rotateZ(-30deg) rotateY(90deg);
-  background: linear-gradient(to bottom right, #eab308, #facc15);
+  transform: rotate(-30deg) rotateY(90deg);
+  background: conic-gradient(from 180deg,
+      #fed330,
+      #f6b93b,
+      #fa8231,
+      #fed330);
 }
 
 .pyramid-loader .wrapper .side2 {
-  transform: rotateZ(30deg) rotateY(90deg);
-  background: linear-gradient(to bottom right, #facc15, #eab308);
+  transform: rotate(30deg) rotateY(90deg);
+  background: conic-gradient(from 180deg,
+      #fed330,
+      #e58e26,
+      #f79f1f,
+      #fed330);
 }
 
 .pyramid-loader .wrapper .side3 {
   transform: rotateX(30deg);
-  background: linear-gradient(to bottom right, #facc15, #eab308);
+  background: conic-gradient(from 180deg,
+      #fed330,
+      #f6b93b,
+      #f7d794,
+      #fed330);
 }
 
 .pyramid-loader .wrapper .side4 {
   transform: rotateX(-30deg);
-  background: linear-gradient(to bottom right, #facc15, #eab308);
+  background: conic-gradient(from 180deg,
+      #fed330,
+      #fa8231,
+      #f7b731,
+      #fed330);
 }
 
 .pyramid-loader .wrapper .shadow {
   width: 60px;
   height: 60px;
-  /* Using a Tailwind-inspired yellow color */
   background: #eab308;
   position: absolute;
   top: 0;

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Error Page
 import ErrorPage from "./pages/ErrorPage";
@@ -14,7 +14,27 @@ import OtpSend from "./pages/Authentication/OtpSend";
 import OtpVerify from "./pages/Authentication/OtpVerify";
 import ResetPassword from "./pages/Authentication/ResetPassword";
 
+// MainLayout
+import Dashboard from "./pages/Main/Dashboard";
+import Sidebar from "./components/Main/Sidebar/Sidebar";
+import Header from "./components/Main/Header/Header";
+
 function App() {
+  // MainLayout
+  const MainLayout = () => {
+    return (
+      <div className="flex bg-gray-400 gap-3">
+        <Sidebar />
+        <div>
+          <Header />
+          <main>
+            <Outlet />
+          </main>
+        </div>
+      </div>
+    );
+  };
+
   const router = createBrowserRouter([
     {
       path: "*",
@@ -39,6 +59,16 @@ function App() {
     {
       path: "/reset-password",
       element: <ResetPassword />,
+    },
+    {
+      path: "/main",
+      element: <MainLayout />,
+      children: [
+        {
+          index: true,
+          element: <Dashboard />,
+        },
+      ],
     },
   ]);
   return <RouterProvider router={router} />;

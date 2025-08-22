@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Greetings() {
   return (
-    <div className="relative h-screen bg-gradient-to-tr from-gray-800 via-gray-700 to-gray-800 px-1.5">
+    <div className="relative min-h-screen bg-gradient-to-tr from-gray-800 via-gray-700 to-gray-800 px-1.5 flex justify-center items-center">
       {/* Grid Background */}
       <div
         className="absolute inset-0 z-0 bg-[length:60px_60px] opacity-30 md:block hidden"
@@ -51,14 +51,13 @@ function Greetings() {
       <div className="relative z-10 flex h-full items-center justify-center flex-col w-[750px] mx-auto space-y-12">
         {/* Greetings Content */}
         <motion.div
-          className="space-y-3"
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
           <h1
             className="text-2xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-l from-yellow-600 to-yellow-400 bg-clip-text text-transparent tracking-wide
-            text-center"
+            text-center mb-3"
           >
             Welcome To NexusTrade
           </h1>

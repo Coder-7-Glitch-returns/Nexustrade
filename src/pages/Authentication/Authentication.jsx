@@ -142,7 +142,7 @@ function Authentication() {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center justify-center">
+      <div className="relative z-10 flex h-screen items-center justify-center">
         <div className="bg-gray-800 w-full max-w-lg h-auto rounded-xl p-6 shadow-2xl border border-gray-700">
           {/* Logo */}
           <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 p-1 mb-6 shadow-lg">

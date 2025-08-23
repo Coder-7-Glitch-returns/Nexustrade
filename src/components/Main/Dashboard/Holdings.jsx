@@ -94,7 +94,7 @@ function Holdings() {
       prevHoldings.map((holding) => ({
         ...holding,
         currentPrice: newPrices[holding.id] || holding.currentPrice,
-      }))
+      })),
     );
   };
 
@@ -129,6 +129,9 @@ function Holdings() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 1.9 }}
     >
+      <div>
+        <h1 className="mb-6 text-2xl font-semibold text-gray-300">Holdings</h1>
+      </div>
       <div className="overflow-x-auto">
         <div className="min-w-max">
           <div className="flex text-gray-400 text-lg border-b border-gray-600 pb-4">
@@ -149,7 +152,7 @@ function Holdings() {
                 priceDifference >= 0 ? "text-green-500" : "text-red-500";
               const sign = priceDifference >= 0 ? "+" : "-";
               const percentageChange = Math.abs(
-                (priceDifference / holding.buyingPrice) * 100
+                (priceDifference / holding.buyingPrice) * 100,
               ).toFixed(2);
 
               return (

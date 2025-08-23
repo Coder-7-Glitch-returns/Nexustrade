@@ -42,8 +42,8 @@ function Cards() {
       bgColor: "bg-green-400/20",
     },
     {
-      title: "Trading Volume",
-      count: 1200000,
+      title: "Order Placed",
+      count: 12,
       icon: <FaChartLine />,
       color: "text-yellow-400",
       bgColor: "bg-yellow-400/20",

@@ -30,7 +30,7 @@ function Sidebar() {
           to="/main/market"
           className="p-3 rounded-lg flex items-center gap-2 transition-colors hover:bg-yellow-400/30 hover:text-yellow-400 text-gray-400"
         >
-          <LuChartCandlestick /> Market
+          <LuChartCandlestick /> Orders
         </Link>
         <Link
           to="/main/trading"

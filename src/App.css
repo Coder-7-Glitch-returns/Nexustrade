@@ -54,38 +54,22 @@ textarea {
 
 .pyramid-loader .wrapper .side1 {
   transform: rotate(-30deg) rotateY(90deg);
-  background: conic-gradient(from 180deg,
-      #fed330,
-      #f6b93b,
-      #fa8231,
-      #fed330);
+  background: conic-gradient(from 180deg, #fed330, #f6b93b, #fa8231, #fed330);
 }
 
 .pyramid-loader .wrapper .side2 {
   transform: rotate(30deg) rotateY(90deg);
-  background: conic-gradient(from 180deg,
-      #fed330,
-      #e58e26,
-      #f79f1f,
-      #fed330);
+  background: conic-gradient(from 180deg, #fed330, #e58e26, #f79f1f, #fed330);
 }
 
 .pyramid-loader .wrapper .side3 {
   transform: rotateX(30deg);
-  background: conic-gradient(from 180deg,
-      #fed330,
-      #f6b93b,
-      #f7d794,
-      #fed330);
+  background: conic-gradient(from 180deg, #fed330, #f6b93b, #f7d794, #fed330);
 }
 
 .pyramid-loader .wrapper .side4 {
   transform: rotateX(-30deg);
-  background: conic-gradient(from 180deg,
-      #fed330,
-      #fa8231,
-      #f7b731,
-      #fed330);
+  background: conic-gradient(from 180deg, #fed330, #fa8231, #f7b731, #fed330);
 }
 
 .pyramid-loader .wrapper .shadow {

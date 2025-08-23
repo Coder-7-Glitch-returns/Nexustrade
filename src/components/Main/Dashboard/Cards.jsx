@@ -1,6 +1,7 @@
 import React from "react";
 import { FaChartLine, FaDollarSign, FaHeart } from "react-icons/fa";
 import { FaHandHoldingDollar } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 function Cards() {
   const formatNumber = (num) => {
@@ -11,6 +12,18 @@ function Cards() {
       return (num / 1000).toFixed(1) + "K";
     }
     return num;
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: custom * 0.2,
+        duration: 1,
+      },
+    }),
   };
 
   const dashboardStats = [
@@ -47,8 +60,12 @@ function Cards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       {dashboardStats.map((stat, i) => (
-        <div
+        <motion.div
           key={i}
+          variants={cardVariants}
+          initial="hidden"
+          animate="visible"
+          custom={i}
           className="bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
         >
           <div className="flex items-center justify-between">
@@ -76,7 +93,7 @@ function Cards() {
               {stat.icon}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

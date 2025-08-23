@@ -8,6 +8,10 @@ textarea {
   outline: none !important;
 }
 
+* {
+  outline: none !important;
+}
+
 .pyramid-loader {
   position: relative;
   width: 20vw;

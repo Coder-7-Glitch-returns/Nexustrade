@@ -1,5 +1,4 @@
-import React from "react";
-import "./App.css";
+import React, { useState } from "react";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Error Page
@@ -23,18 +22,19 @@ import Trading from "./pages/Main/Trading";
 import Favorites from "./pages/Main/Favorites";
 
 function App() {
-  // MainLayout
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   const MainLayout = () => {
     return (
       <div
-        className="flex w-full"
+        className="flex w-full min-h-screen relative"
         style={{
           background: "linear-gradient(to bottom, #1B1E24, #1E252E, #282E37)",
         }}
       >
         <Sidebar />
         <div className="w-full">
-          <Header />
+          <Header setSidebarOpen={setSidebarOpen} />
           <main className="p-6">
             <Outlet />
           </main>

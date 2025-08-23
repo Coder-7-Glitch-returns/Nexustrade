@@ -23,11 +23,16 @@ function App() {
   // MainLayout
   const MainLayout = () => {
     return (
-      <div className="flex bg-gray-400 gap-3">
+      <div
+        className="flex w-full"
+        style={{
+          background: "linear-gradient(to bottom, #1B1E24, #1E252E, #282E37)",
+        }}
+      >
         <Sidebar />
-        <div>
+        <div className="w-full">
           <Header />
-          <main>
+          <main className="p-6">
             <Outlet />
           </main>
         </div>

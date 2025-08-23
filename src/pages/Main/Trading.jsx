@@ -66,7 +66,7 @@ const Trading = () => {
         setLoading(true);
         // Using the public CoinGecko API endpoint for market data.
         const response = await fetch(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&locale=en",
+          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&locale=en"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch data");
@@ -87,7 +87,7 @@ const Trading = () => {
     try {
       setDetailsLoading(true);
       const response = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${coinId}`,
+        `https://api.coingecko.com/api/v3/coins/${coinId}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch coin details");
@@ -127,7 +127,7 @@ const Trading = () => {
     .filter(
       (coin) =>
         coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        coin.symbol.toLowerCase().includes(searchTerm.toLowerCase()),
+        coin.symbol.toLowerCase().includes(searchTerm.toLowerCase())
     )
     .sort((a, b) => {
       const aValue = a[sortOrder.key];
@@ -150,7 +150,7 @@ const Trading = () => {
   const indexOfFirstCoin = indexOfLastCoin - itemsPerPage;
   const currentCoins = sortedAndFilteredCoins.slice(
     indexOfFirstCoin,
-    indexOfLastCoin,
+    indexOfLastCoin
   );
   const totalPages = Math.ceil(sortedAndFilteredCoins.length / itemsPerPage);
 
@@ -387,7 +387,7 @@ const Trading = () => {
 
         {/* Coin Details Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50">
+          <div className="fixed inset-0 bg-black/50 flex items-center backdrop-blur-md justify-center p-4 z-50">
             <div className="bg-gray-800 rounded-xl max-w-2xl w-full max-h-screen overflow-y-auto">
               <div className="p-6">
                 <div className="flex justify-between items-start mb-6">
@@ -412,7 +412,7 @@ const Trading = () => {
                   </div>
                   <button
                     onClick={closeModal}
-                    className="text-gray-400 hover:text-white text-2xl"
+                    className="text-gray-400 hover:text-white text-2xl cursor-pointer"
                   >
                     &times;
                   </button>
@@ -435,21 +435,21 @@ const Trading = () => {
                           <span className="text-gray-400">Current Price:</span>
                           <span className="text-white">
                             {formatCurrency(
-                              coinDetails.market_data.current_price.usd,
+                              coinDetails.market_data.current_price.usd
                             )}
                           </span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-400">24h Change:</span>
                           {formatPercentage(
-                            coinDetails.market_data.price_change_percentage_24h,
+                            coinDetails.market_data.price_change_percentage_24h
                           )}
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-400">24h High:</span>
                           <span className="text-white">
                             {formatCurrency(
-                              coinDetails.market_data.high_24h.usd,
+                              coinDetails.market_data.high_24h.usd
                             )}
                           </span>
                         </div>
@@ -457,7 +457,7 @@ const Trading = () => {
                           <span className="text-gray-400">24h Low:</span>
                           <span className="text-white">
                             {formatCurrency(
-                              coinDetails.market_data.low_24h.usd,
+                              coinDetails.market_data.low_24h.usd
                             )}
                           </span>
                         </div>
@@ -485,7 +485,7 @@ const Trading = () => {
                           <span className="text-gray-400">Market Cap:</span>
                           <span className="text-white">
                             {formatCurrency(
-                              coinDetails.market_data.market_cap.usd,
+                              coinDetails.market_data.market_cap.usd
                             )}
                           </span>
                         </div>
@@ -493,7 +493,7 @@ const Trading = () => {
                           <span className="text-gray-400">Volume (24h):</span>
                           <span className="text-white">
                             {formatCurrency(
-                              coinDetails.market_data.total_volume.usd,
+                              coinDetails.market_data.total_volume.usd
                             )}
                           </span>
                         </div>
@@ -503,7 +503,7 @@ const Trading = () => {
                           </span>
                           <span className="text-white">
                             {formatNumber(
-                              coinDetails.market_data.circulating_supply,
+                              coinDetails.market_data.circulating_supply
                             )}
                           </span>
                         </div>
@@ -512,7 +512,7 @@ const Trading = () => {
                           <span className="text-white">
                             {coinDetails.market_data.total_supply
                               ? formatNumber(
-                                  coinDetails.market_data.total_supply,
+                                  coinDetails.market_data.total_supply
                                 )
                               : "N/A"}
                           </span>
@@ -556,7 +556,7 @@ const Trading = () => {
                               >
                                 Website
                               </a>
-                            ),
+                            )
                         )}
                         {coinDetails.links.blockchain_site.map(
                           (link, index) =>
@@ -571,7 +571,7 @@ const Trading = () => {
                               >
                                 Explorer {index + 1}
                               </a>
-                            ),
+                            )
                         )}
                       </div>
                     </div>

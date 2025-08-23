@@ -18,6 +18,9 @@ import ResetPassword from "./pages/Authentication/ResetPassword";
 import Dashboard from "./pages/Main/Dashboard";
 import Sidebar from "./components/Main/Sidebar/Sidebar";
 import Header from "./components/Main/Header/Header";
+import Market from "./pages/Main/Market";
+import Trading from "./pages/Main/Trading";
+import Favorites from "./pages/Main/Favorites";
 
 function App() {
   // MainLayout
@@ -72,6 +75,18 @@ function App() {
         {
           index: true,
           element: <Dashboard />,
+        },
+        {
+          path: "market",
+          element: <Market />,
+        },
+        {
+          path: "trading",
+          element: <Trading />,
+        },
+        {
+          path: "favorites",
+          element: <Favorites />,
         },
       ],
     },
